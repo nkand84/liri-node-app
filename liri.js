@@ -4,6 +4,7 @@ require("dotenv").config();
 var action = process.argv[2];
 var value = process.argv[3];
 var movieName = "";
+var songName = "";
 //request
 var request = require("request");
 // switch case 
@@ -24,11 +25,11 @@ switch (action) {
         doWhatItSays();
         break;
 }
-
+// OMDB request
 function movieThis() {
-    if (value === ""){
-        movieName = "Mr.Nobody";
-        request("http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=trilogy", function (error, response, body) {
+    if (value === ''){
+       
+        request("http://www.omdbapi.com/?t=mr.nobody&y=&plot=short&apikey=trilogy", function (error, response, body) {
             if (!error && response.statusCode === 200) {
                 console.log(JSON.parse(body));
             }
@@ -44,13 +45,13 @@ function movieThis() {
 
     }
     else {
-        for (var i = 3; i < process.argv.length; i++) {
-            movieName = movieName + process.argv[i] + " ";
-        }
+        // for (var i = 3; i < process.argv.length; i++) {
+        //     movieName = movieName + process.argv[i] + " ";
+        // }
+        movieName = value;
         request("http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=trilogy", function (error, response, body) {
             if (!error && response.statusCode === 200) {
-                console.log(JSON.parse(body));
-            }
+                // console.log(JSON.parse(body));
             console.log("Title of the Movie: " + JSON.parse(body).Title);
             console.log("Year the movie came out: " + JSON.parse(body).Year);
             console.log("IMDB Rating of the movie: " + JSON.parse(body).imdbRating);
@@ -59,9 +60,21 @@ function movieThis() {
             console.log("Language of the movie: " + JSON.parse(body).Language);
             console.log("Plot of the movie: " + JSON.parse(body).Plot);
             console.log("Actors in the movie: " + JSON.parse(body).Actors);
-
+            }
 
         });
     }
     
+}
+// spotify request
+function  spotifyThisSong(){
+    if(value == ""){
+
+    }
+    else {
+        songName = value;
+        request("http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=trilogy", function (error, response, body) {
+            if (!error && response.statusCode === 200) {
+
+    }
 }
