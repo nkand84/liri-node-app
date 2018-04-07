@@ -115,7 +115,8 @@ function myTweets() {
                 tweetsToString += "\n--------------------------Twitter Data--------------------------------";
                 tweetsToString += "\n" + tweets[t].created_at;
                 tweetsToString += "\n" + tweets[t].text;
-                if (t === 4) { break; }
+                // if tweets = 10 then come out of the for loop
+                if (t === 9) { break; }
             }
             console.log(tweetsToString);
             var fs = require("fs");

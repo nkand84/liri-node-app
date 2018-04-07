@@ -111,7 +111,8 @@ function myTweets() {
                 console.log(tweets[t].created_at);
                 // text of the tweet
                 console.log(tweets[t].text);
-                if (t === 4) { break; }
+                // when loop reaches 10 tweets, break
+                if (t === 9) { break; }
             }
         }
     });
