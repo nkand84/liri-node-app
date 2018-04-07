@@ -1,24 +1,21 @@
 require("dotenv").config();
 
 var keys = require('./keys.js');
-
 var Spotify = require('node-spotify-api');
-console.log('====== keys ======')
-console.log(keys.spotify.id)
-console.log('====== end of keys ======')
-//request
+// console.log('====== keys ======')
+// console.log(keys.spotify.id)
+// console.log('====== end of keys ======')
+//getting npm package
 var request = require("request");
 var spotify = new Spotify({
     id: keys.spotify.id,
     secret: keys.spotify.secret
-  });
-
-
-// user input
+});
+// user inputs
 var action = process.argv[2];
 var value = process.argv[3];
 var movieName = "";
-var songName = "";
+
 
 // switch case 
 switch (action) {
@@ -27,7 +24,7 @@ switch (action) {
         break;
 
     case "spotify-this-song":
-        spotifyThisSong(value);
+        spotifyThisSong();
         break;
 
     case "movie-this":
@@ -70,19 +67,37 @@ function omdbResponse(error, response, body) {
 
 };
 
-
-
-
 // spotify request
-function spotifyThisSong(value) {
-    console.log(value);
-    spotify.search({ type: "track", query: value}, function (err, data) {
-        if (err) {
-            return console.log('Error occurred: ' + err);
-        }
-    for()
-        console.log(JSON.stringify(data.tracks.items[0], null, 2));
-    });
+function spotifyThisSong() {
+    // console.log(value);
+    if (typeof value === 'undefined') {
 
+        spotify.search({ type: "track", query:"The Sign"}, function (err, data) {
+            if (err) {
+                return console.log('Error occurred: ' + err);
+            }
+           
+                console.log(data.artists[0].name);
+            
+            // loop through obejct 
+            // for (var key in data) {
+            //     if()
+            //     console.log(JSON.stringify(data.artists[0], null, 2));
+            // }
+        });
+    }
+    else {
+        
+        spotify.search({ type: "track", query: value }, function (err, data){
+            if (err) {
+                return console.log('Error occurred: ' + err);
+            }
+            // loop through obejct 
+           
+                    console.log(data.artists[0].name);
+                
+               
+            });
+    }
 
 }
