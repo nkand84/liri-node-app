@@ -1,5 +1,6 @@
 require("dotenv").config();
 //getting npm package
+// importing the file keys.js
 var keys = require('./keys.js');
 var Spotify = require('node-spotify-api');
 var Twitter = require('twitter');
@@ -18,11 +19,11 @@ var client = new Twitter({
 // user inputs
 var action = process.argv[2];
 var value = process.argv[3];
-var movieName = "";
+
 // console.log(keys.spotify.id);
 // console.log(keys.twitter.consumer_key);
 
-// switch case 
+// switch case with command line arguments and functions 
 switch (action) {
     case "my-tweets":
         myTweets();
@@ -48,14 +49,12 @@ function movieThis(movieName) {
 
     }
     else {
-        // for (var i = 3; i < process.argv.length; i++) {
-        //     movieName = movieName + process.argv[i] + " ";
-        // }
         request("http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=trilogy", omdbResponse)
 
     }
 
 }
+// OMDB response 
 function omdbResponse(error, response, body) {
     if (!error && response.statusCode === 200) {
         // console.log(JSON.parse(body));
@@ -76,66 +75,47 @@ function omdbResponse(error, response, body) {
 function spotifyThisSong(songName) {
     // console.log(value);
     if (typeof songName === 'undefined') {
-
-        spotify.search({ type: "track", query: "The Sign" }, function (err, data) {
-            if (err) {
-                return console.log('Error occurred: ' + err);
-            }
-            var spotifyObj = data.tracks.items;
-
-            // looping thru array of items inside the object
-            for (var j = 0; j < spotifyObj.length; j++) {
-                console.log("--------------------------------------------------------------------------------");
-                console.log("Song Name =>" + spotifyObj[j].name);
-                console.log("Spotify Preview Link =>" + spotifyObj[j].preview_url);
-                console.log("Album the song is from =>" + spotifyObj[j].album.name);
-                for (var i = 0; i < spotifyObj[j].artists.length; i++) {
-                    console.log("Artists =>" + spotifyObj[j].artists[i].name);
-                }
-            }
-        });
+        spotify.search({ type: "track", query: "The Sign" }, spotifyResponse)
     }
     else {
-        spotify.search({ type: "track", query: songName }, function (err, data) {
-            if (err) {
-                return console.log('Error occurred: ' + err);
-            }
-            // console.log(data.tracks.items);
-            var spotifyObj = data.tracks.items;
-
-            // looping thru array of items inside the object
-            for (var j = 0; j < spotifyObj.length; j++) {
-                console.log("--------------------------------------------------------------------------------");
-                console.log("Song Name =>" + spotifyObj[j].name);
-                console.log("Spotify Preview Link =>" + spotifyObj[j].preview_url);
-                console.log("Album the song is from =>" + spotifyObj[j].album.name);
-                for (var i = 0; i < spotifyObj[j].artists.length; i++) {
-                    console.log("Artists =>" + spotifyObj[j].artists[i].name);
-                }
-            }
-        });
+        spotify.search({ type: "track", query: songName }, spotifyResponse)
+    }
+}
+// spotify response 
+function spotifyResponse(err, data) {
+    if (err) {
+        return console.log('Error occurred: ' + err);
+    }
+    var spotifyObj = data.tracks.items;
+    // looping thru array of items inside the object
+    for (var j = 0; j < spotifyObj.length; j++) {
+        console.log("--------------------------------------------------------------------------------");
+        console.log("Song Name => " + spotifyObj[j].name);
+        console.log("Spotify Preview Link => " + spotifyObj[j].preview_url);
+        console.log("Album the song is from => " + spotifyObj[j].album.name);
+        for (var i = 0; i < spotifyObj[j].artists.length; i++) {
+            console.log("Artists => " + spotifyObj[j].artists[i].name);
+        }
     }
 }
 
-// twitter request
+// twitter 
 function myTweets() {
     var params = { screen_name: 'knkool84' };
     client.get('statuses/user_timeline', params, function (error, tweets, response) {
         if (!error) {
-
             // looping through an array of tweet info
             for (var t = 0; t < tweets.length; t++) {
-
-                console.log("----------------------------------------------------------");
+                console.log("---------------------------------------------------------------");
+                // logging the date or time stamp of the tweet
                 console.log(tweets[t].created_at);
+                // text of the tweet
                 console.log(tweets[t].text);
                 if (t === 4) { break; }
             }
         }
     });
 }
-
-
 
 function doWhatItSays() {
     var fs = require("fs");
@@ -144,12 +124,12 @@ function doWhatItSays() {
         if (error) {
             return console.log(error);
         }
-        console.log(data);
-        // spotifyThisSong(data);
-        // split the string to get the command first
+        // console.log(data);
+        // split the string at comma to get the command first
         var splitArray = data.split(',');
-        console.log(splitArray);
+        // console.log(splitArray);
         // first index is the command
+        // second index is the value to search for 
         if (splitArray[0] === "spotify-this-song") {
             spotifyThisSong(splitArray[1]);
         }
