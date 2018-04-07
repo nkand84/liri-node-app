@@ -2,9 +2,6 @@ require("dotenv").config();
 
 var keys = require('./keys.js');
 var Spotify = require('node-spotify-api');
-// console.log('====== keys ======')
-// console.log(keys.spotify.id)
-// console.log('====== end of keys ======')
 //getting npm package
 var request = require("request");
 var spotify = new Spotify({
@@ -55,6 +52,7 @@ function movieThis() {
 function omdbResponse(error, response, body) {
     if (!error && response.statusCode === 200) {
         // console.log(JSON.parse(body));
+        console.log("---------------------------------------------------------------------------------------");
         console.log("Title of the Movie: " + JSON.parse(body).Title);
         console.log("Year the movie came out: " + JSON.parse(body).Year);
         console.log("IMDB Rating of the movie: " + JSON.parse(body).imdbRating);
@@ -72,32 +70,34 @@ function spotifyThisSong() {
     // console.log(value);
     if (typeof value === 'undefined') {
 
-        spotify.search({ type: "track", query:"The Sign"}, function (err, data) {
+        spotify.search({ type: "track", query: "The Sign" }, function (err, data) {
             if (err) {
                 return console.log('Error occurred: ' + err);
             }
-           
-                console.log(data.artists[0].name);
-            
-            // loop through obejct 
-            // for (var key in data) {
-            //     if()
-            //     console.log(JSON.stringify(data.artists[0], null, 2));
-            // }
+
         });
     }
     else {
-        
-        spotify.search({ type: "track", query: value }, function (err, data){
+        spotify.search({ type: "track", query: value }, function (err, data) {
             if (err) {
                 return console.log('Error occurred: ' + err);
             }
-            // loop through obejct 
-           
-                    console.log(data.artists[0].name);
-                
-               
-            });
-    }
+            // console.log(data.tracks.items);
+            var spotifyObj = data.tracks.items;
 
+            // looping thru array of items inside the object
+            for (var j = 0; j < spotifyObj.length; j++) {
+                console.log("--------------------------------------------------------------------------------");
+                console.log("Song Name =>" + spotifyObj[j].name);
+                console.log("Spotify Preview Link =>" + spotifyObj[j].preview_url);
+                console.log("Album the song is from =>" + spotifyObj[j].album.name);
+                for (var i = 0; i < spotifyObj[j].artists.length; i++) {
+                    console.log("Artists =>" + spotifyObj[j].artists[i].name);
+                }
+            }
+        });
+    }
 }
+
+// twitter request
+
