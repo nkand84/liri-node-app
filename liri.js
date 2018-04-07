@@ -29,11 +29,11 @@ switch (action) {
         break;
 
     case "spotify-this-song":
-        spotifyThisSong();
+        spotifyThisSong(value);
         break;
 
     case "movie-this":
-        movieThis();
+        movieThis(value);
         break;
 
     case "do-what-it-says":
@@ -41,8 +41,8 @@ switch (action) {
         break;
 }
 // OMDB request
-function movieThis() {
-    if (typeof value === 'undefined') {
+function movieThis(movieName) {
+    if (typeof movieName === 'undefined') {
 
         request("http://www.omdbapi.com/?t=mr.nobody&y=&plot=short&apikey=trilogy", omdbResponse)
 
@@ -51,7 +51,6 @@ function movieThis() {
         // for (var i = 3; i < process.argv.length; i++) {
         //     movieName = movieName + process.argv[i] + " ";
         // }
-        movieName = value;
         request("http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=trilogy", omdbResponse)
 
     }
@@ -74,9 +73,9 @@ function omdbResponse(error, response, body) {
 };
 
 // spotify request
-function spotifyThisSong() {
+function spotifyThisSong(songName) {
     // console.log(value);
-    if (typeof value === 'undefined') {
+    if (typeof songName === 'undefined') {
 
         spotify.search({ type: "track", query: "The Sign" }, function (err, data) {
             if (err) {
@@ -97,7 +96,7 @@ function spotifyThisSong() {
         });
     }
     else {
-        spotify.search({ type: "track", query: value }, function (err, data) {
+        spotify.search({ type: "track", query: songName }, function (err, data) {
             if (err) {
                 return console.log('Error occurred: ' + err);
             }
@@ -134,4 +133,32 @@ function myTweets() {
             }
         }
     });
+}
+
+
+
+function doWhatItSays() {
+    var fs = require("fs");
+    // read file random.txt
+    fs.readFile("random.txt", "utf8", function (error, data) {
+        if (error) {
+            return console.log(error);
+        }
+        console.log(data);
+        // spotifyThisSong(data);
+        // split the string to get the command first
+        var splitArray = data.split(',');
+        console.log(splitArray);
+        // first index is the command
+        if (splitArray[0] === "spotify-this-song") {
+            spotifyThisSong(splitArray[1]);
+        }
+        else if (splitArray[0] === "movie-this") {
+            movieThis(splitArray[1]);
+        }
+        else if (splitArray[0] === "my-tweets") {
+            myTweets();
+        }
+
+    })
 }
