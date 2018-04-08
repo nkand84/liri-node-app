@@ -7,6 +7,10 @@
 <li>Spotify API</li>
 <li>OMDB API</li>
 </ul>
+<h3>Requirements</h3>
+<p>Should provide your own Twitter and Spotify api keys in a .env file</p>
+<p>Install the npm modules by entering the following into the terminal/command line </p>
+<code>npm i</code>
 <h3>Liri takes four commands</h3>
 <ul>
 <li>my-tweets</li>
