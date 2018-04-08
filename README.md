@@ -47,4 +47,4 @@
 </ol>
 <h3>Bonus</h3>
 <p>In addition to logging the data to your terminal/bash window, output the data to a .txt file called data.txt.</p>
-<img src="liri.png" alt="sample liri data on console">
+<img src="liri.PNG" alt="sample liri data on console">
