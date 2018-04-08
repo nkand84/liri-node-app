@@ -857,3 +857,111 @@ created an account on spotify at last!!
 --------------------------Twitter Data--------------------------------
 Thu Apr 05 22:21:06 +0000 2018
 Just trying to figure out my homework 😌
+=========================================================================
+Title of the Movie: Mr. Nobody
+Year the movie came out: 2009
+IMDB Rating of the movie: 7.9
+Rotten Tomatoes Rating of the movie: 66%
+Country where the movie was produced: Belgium, Germany, Canada, France, USA, UK
+Language of the movie: English, Mohawk
+Plot of the movie: A boy stands on a station platform as a train is about to leave. Should he go with his mother or stay with his father? Infinite possibilities arise from this decision. As long as he doesn't choose, anything is possible.Actors in the movie: Jared Leto, Sarah Polley, Diane Kruger, Linh Dan Pham
+--------------------------Spotify Data-----------------------------------
+Song Name => Roar
+Spotify Preview Link => null
+Album the song is from => PRISM (Deluxe)
+Artists => Katy Perry
+--------------------------Spotify Data-----------------------------------
+Song Name => Roar
+Spotify Preview Link => null
+Album the song is from => Roar
+Artists => Katy Perry
+--------------------------Spotify Data-----------------------------------
+Song Name => Breakers Roar
+Spotify Preview Link => https://p.scdn.co/mp3-preview/98e50e4035afabd3ed4ddfa754646d2f24279209?cid=96943c3c07f64934a6bdbad09df85dd9
+Album the song is from => A Sailor's Guide to Earth
+Artists => Sturgill Simpson
+--------------------------Spotify Data-----------------------------------
+Song Name => Roar
+Spotify Preview Link => null
+Album the song is from => KIDZ BOP Greatest Hits!
+Artists => Kidz Bop Kids
+--------------------------Spotify Data-----------------------------------
+Song Name => Lion Roar
+Spotify Preview Link => https://p.scdn.co/mp3-preview/104a4717859dfed14f038ddd05d59b25a8325be1?cid=96943c3c07f64934a6bdbad09df85dd9
+Album the song is from => Lion Roar
+Artists => Sammy Johnson
+--------------------------Spotify Data-----------------------------------
+Song Name => Ganja Farmer
+Spotify Preview Link => https://p.scdn.co/mp3-preview/35534ed94a8971a35f0d122cc505d4512532dae7?cid=96943c3c07f64934a6bdbad09df85dd9
+Album the song is from => Hear Me Roar
+Artists => J Boog
+--------------------------Spotify Data-----------------------------------
+Song Name => Love Season
+Spotify Preview Link => https://p.scdn.co/mp3-preview/3bdbe2825a18fd013cf93eb221764ee407f6266f?cid=96943c3c07f64934a6bdbad09df85dd9
+Album the song is from => Hear Me Roar
+Artists => J Boog
+--------------------------Spotify Data-----------------------------------
+Song Name => I Can't Handle Change
+Spotify Preview Link => https://p.scdn.co/mp3-preview/8f6a577aa9e998b26fb313b58116fdd3dab5a9e6?cid=96943c3c07f64934a6bdbad09df85dd9
+Album the song is from => I Can't Handle Change
+Artists => Roar
+--------------------------Spotify Data-----------------------------------
+Song Name => R.O.A.R.
+Spotify Preview Link => null
+Album the song is from => Stony Hill
+Artists => Damian Marley
+--------------------------Spotify Data-----------------------------------
+Song Name => ROAR
+Spotify Preview Link => https://p.scdn.co/mp3-preview/89c017b1f21965e095e6d4f71ae345066ba3e52d?cid=96943c3c07f64934a6bdbad09df85dd9
+Album the song is from => SF9 First Mini Album [Burning Sensation]
+Artists => SF9
+--------------------------Spotify Data-----------------------------------
+Song Name => California Sunrise
+Spotify Preview Link => https://p.scdn.co/mp3-preview/18abdd3f3ddb4c7f6af28e9b4a064f753eed4984?cid=96943c3c07f64934a6bdbad09df85dd9
+Album the song is from => Roar
+Artists => Dirty Gold
+--------------------------Spotify Data-----------------------------------
+Song Name => Whirring
+Spotify Preview Link => https://p.scdn.co/mp3-preview/f014341f40a238bb828feef6806e6618a2c06066?cid=96943c3c07f64934a6bdbad09df85dd9
+Album the song is from => The Big Roar
+Artists => The Joy Formidable
+--------------------------Spotify Data-----------------------------------
+Song Name => Low Roar
+Spotify Preview Link => https://p.scdn.co/mp3-preview/b242e79a808409604ea4ed77b8b65a4f4bace27b?cid=96943c3c07f64934a6bdbad09df85dd9
+Album the song is from => Low Roar
+Artists => Low Roar
+--------------------------Spotify Data-----------------------------------
+Song Name => Hear Me Roar
+Spotify Preview Link => https://p.scdn.co/mp3-preview/2f0ac8a184db01a239fef1eabef38740e33d7511?cid=96943c3c07f64934a6bdbad09df85dd9
+Album the song is from => Game Of Thrones: Season 6 (Music from the HBO® Series)
+Artists => Ramin Djawadi
+--------------------------Spotify Data-----------------------------------
+Song Name => Friends Make Garbage (Good Friends Take It Out)
+Spotify Preview Link => https://p.scdn.co/mp3-preview/614e856fcd7e7aceabcaf8b2da1d2cd806c5b12a?cid=96943c3c07f64934a6bdbad09df85dd9
+Album the song is from => Low Roar
+Artists => Low Roar
+--------------------------Spotify Data-----------------------------------
+Song Name => I'll Keep Coming
+Spotify Preview Link => https://p.scdn.co/mp3-preview/580449d8b28b35da7218dfefc5a81e64262de31e?cid=96943c3c07f64934a6bdbad09df85dd9
+Album the song is from => 0
+Artists => Low Roar
+--------------------------Spotify Data-----------------------------------
+Song Name => Calming Pacific Ocean Roar to Induce Healing Delta Sleep Waves (Nursery Rhymes Lullabies Effect)
+Spotify Preview Link => https://p.scdn.co/mp3-preview/1fd95c0514e54bffa245dfeb7561a6967efe4954?cid=96943c3c07f64934a6bdbad09df85dd9
+Album the song is from => White Noise for Sleeping Babies
+Artists => White Noise Baby Sleep
+--------------------------Spotify Data-----------------------------------
+Song Name => Hear Me Roar
+Spotify Preview Link => https://p.scdn.co/mp3-preview/672ac74902c39368de1e03edc38f43f73412af69?cid=96943c3c07f64934a6bdbad09df85dd9
+Album the song is from => Hear Me Roar
+Artists => J Boog
+--------------------------Spotify Data-----------------------------------
+Song Name => Lifetime Lover
+Spotify Preview Link => https://p.scdn.co/mp3-preview/91efa7ac21c37e3c8afad246022200d1da517c0a?cid=96943c3c07f64934a6bdbad09df85dd9
+Album the song is from => Hear Me Roar
+Artists => J Boog
+--------------------------Spotify Data-----------------------------------
+Song Name => She Swallowed Burning Coals
+Spotify Preview Link => https://p.scdn.co/mp3-preview/daa16c5f13093d155adc64fc7603723a74340b67?cid=96943c3c07f64934a6bdbad09df85dd9
+Album the song is from => ¡Roar!
+Artists => El Tigr3
