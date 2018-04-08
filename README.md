@@ -1,4 +1,4 @@
-Liri using Node JS 
+<h1>Liri using Node JS </h1>
 
 <p>LIRI will be a command line node app that takes in parameters and gives you back data.</p>
 <p>To retrieve the data that will power this app, you'll need to send requests to the Twitter, Spotify and OMDB APIs. </p>
@@ -7,14 +7,14 @@ Liri using Node JS
 <li>Spotify API</li>
 <li>OMDB API</li>
 </ul>
-<h6>Liri takes four commands</h6>
+<h3>Liri takes four commands</h3>
 <ul>
 <li>my-tweets</li>
 <li>spotify-this-song</li>
 <li>movie-this</li>
 <li>do-what-it-says</li>
 </ul>
-<h6>What Each Command Should Do</h6>
+<h5>What Each Command Should Do</h5>
 <ol>
 <li>node liri.js my-tweets</li>
 <p>This will show your last 10 tweets and when they were created at in your terminal/bash window.</p>
