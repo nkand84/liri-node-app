@@ -52,21 +52,21 @@ function movieThis(movieName) {
 }
 // OMDB response 
 function omdbResponse(error, response, body) {
-       if (!error && response.statusCode === 200) {
-        var movieToString = "";
-        movieToString += "\n=========================================================================";
-        movieToString += "\nTitle of the Movie: " + JSON.parse(body).Title;
-        movieToString += "\nYear the movie came out: " + JSON.parse(body).Year;
-        movieToString += "\nIMDB Rating of the movie: " + JSON.parse(body).imdbRating;
-        movieToString += "\nRotten Tomatoes Rating of the movie: " + JSON.parse(body).Ratings[1].Value;
-        movieToString += "\nCountry where the movie was produced: " + JSON.parse(body).Country;
-        movieToString += "\nLanguage of the movie: " + JSON.parse(body).Language;
-        movieToString += "\nPlot of the movie: " + JSON.parse(body).Plot;
-        movieToString += "Actors in the movie: " + JSON.parse(body).Actors;
-        console.log("Movie Info => "+ movieToString);
+    if (!error && response.statusCode === 200) {
+        // var movieToString = "";
+        var movieToString = "\n=========================================================================" +
+            "\nTitle of the Movie: " + JSON.parse(body).Title
+            + "\nYear the movie came out: " + JSON.parse(body).Year
+            + "\nIMDB Rating of the movie: " + JSON.parse(body).imdbRating
+            + "\nRotten Tomatoes Rating of the movie: " + JSON.parse(body).Ratings[1].Value
+            + "\nCountry where the movie was produced: " + JSON.parse(body).Country
+            + "\nLanguage of the movie: " + JSON.parse(body).Language
+            + "\nPlot of the movie: " + JSON.parse(body).Plot
+            + "Actors in the movie: " + JSON.parse(body).Actors
+        console.log("Movie Info => " + movieToString);
         var fs = require("fs");
         // write the command line data into a text file
-        fs.appendFile("data.txt",movieToString, appendData)
+        fs.appendFile("data.txt", movieToString, appendData)
     }
 };
 
@@ -90,17 +90,17 @@ function spotifyResponse(err, data) {
     var spotifyToString = "";
     // looping thru array of items inside the object
     for (var j = 0; j < spotifyObj.length; j++) {
-        spotifyToString += "\n--------------------------Spotify Data-----------------------------------";
-        spotifyToString += "\nSong Name => " + spotifyObj[j].name;
-        spotifyToString += "\nSpotify Preview Link => " + spotifyObj[j].preview_url;
-        spotifyToString += "\nAlbum the song is from => " + spotifyObj[j].album.name;
+        spotifyToString += "\n--------------------------Spotify Data-----------------------------------"
+            + "\nSong Name => " + spotifyObj[j].name
+            + "\nSpotify Preview Link => " + spotifyObj[j].preview_url
+            + "\nAlbum the song is from => " + spotifyObj[j].album.name;
         for (var i = 0; i < spotifyObj[j].artists.length; i++) {
             spotifyToString += "\nArtists => " + spotifyObj[j].artists[i].name
         }
     }
     console.log("==================================================");
     console.log("This string goes into the data.txt file" + spotifyToString);
-    fs.appendFile("data.txt", spotifyToString,appendData)
+    fs.appendFile("data.txt", spotifyToString, appendData)
 }
 
 
@@ -112,9 +112,9 @@ function myTweets() {
             var tweetsToString = ""
             // looping through an array of tweet info
             for (var t = 0; t < tweets.length; t++) {
-                tweetsToString += "\n--------------------------Twitter Data--------------------------------";
-                tweetsToString += "\n" + tweets[t].created_at;
-                tweetsToString += "\n" + tweets[t].text;
+                tweetsToString += "\n--------------------------Twitter Data--------------------------------"
+                + "\n" + tweets[t].created_at
+                + "\n" + tweets[t].text;
                 // if tweets = 10 then come out of the for loop
                 if (t === 9) { break; }
             }
